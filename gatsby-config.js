@@ -22,22 +22,7 @@ module.exports = ({
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    {
-      resolve: 'gatsby-transformer-remark',
-      options: {
-        plugins: [{
-            resolve: `gatsby-remark-katex`,
-            options: {
-              // Add any KaTeX options from https://github.com/KaTeX/KaTeX/blob/master/docs/options.md here
-              strict: `ignore`
-            }
-          },
-          {
-            resolve: 'gatsby-remark-autolink-headers',
-          },
-        ],
-      },
-    },
+    `gatsby-transformer-remark`,
     `gatsby-transformer-yaml`,
     `gatsby-plugin-theme-ui`,
     {
@@ -176,8 +161,7 @@ module.exports = ({
                   }
                 }
               }
-              ` :
-            `
+              ` : `
               {
                 allArticle(sort: {order: DESC, fields: date}) {
                   edges {
@@ -282,6 +266,13 @@ module.exports = ({
               rel: 'noreferrer', // eslint-disable-line unicorn/prevent-abbreviations
             },
           },
+          {
+            resolve: `gatsby-remark-katex`,
+            options: {
+              // Add any KaTeX options from https://github.com/KaTeX/KaTeX/blob/master/docs/options.md here
+              strict: `ignore`
+            }
+          }
         ],
         remarkPlugins: [require(`remark-slug`)], // eslint-disable-line global-require
       },
