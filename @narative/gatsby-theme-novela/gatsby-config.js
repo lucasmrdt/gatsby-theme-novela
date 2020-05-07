@@ -16,7 +16,23 @@ module.exports = ({
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    `gatsby-transformer-remark`,
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-katex`,
+            options: {
+              // Add any KaTeX options from https://github.com/KaTeX/KaTeX/blob/master/docs/options.md here
+              strict: `ignore`
+            }
+          },
+          {
+            resolve: 'gatsby-remark-autolink-headers',
+          },
+        ],
+      },
+    },
     `gatsby-transformer-yaml`,
     `gatsby-plugin-theme-ui`,
     {

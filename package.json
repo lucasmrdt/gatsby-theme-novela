@@ -63,5 +63,10 @@
   "prettier": {
     "singleQuote": true,
     "trailingComma": "all"
+  },
+  "dependencies": {
+    "gatsby-remark-autolink-headers": "2.3.1",
+    "gatsby-remark-katex": "3.3.1",
+    "katex": "0.11.1"
   }
 }
