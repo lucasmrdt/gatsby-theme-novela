@@ -15,6 +15,7 @@ import HorizontalRule from '@components/HorizontalRule';
 import Lists from '@components/Lists';
 import Paragraph from '@components/Paragraph';
 import Span from '@components/Span';
+import Details from '@components/Details';
 import Tables from '@components/Tables';
 import { ImageZoom } from '@components/Image';
 import Figcaption from '@components/Figcaption';
@@ -36,6 +37,7 @@ const components = {
   ul: Lists.ul,
   ol: Lists.ol,
   p: Paragraph,
+  details: Details,
   span: Span,
   code: Code.Prism,
   pre: Code.Pre,
