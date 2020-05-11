@@ -17,10 +17,6 @@ const Details = styled.details`
     margin: 0 auto 25px;
   `};
 
-  ${mediaqueries.phablet`
-    padding: 0 20px;
-  `};
-
   & > summary {
     word-break: keep-all;
     font-size: 18px;
@@ -31,8 +27,13 @@ const Details = styled.details`
     cursor: pointer;
 
     ${mediaqueries.phablet`
+      padding: 0 20px;
       font-size: 16px;
     `};
+  }
+
+  & * {
+    box-sizing: border-box;
   }
 `;
 
