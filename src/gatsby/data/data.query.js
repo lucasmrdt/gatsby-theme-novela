@@ -29,6 +29,7 @@ module.exports.local = {
           dateForSEO: date
           timeToRead
           excerpt
+          tag
           canonical_url
           subscription
           body
@@ -106,6 +107,7 @@ module.exports.contentful = {
             }
           }
           excerpt
+          tag
           title
           slug
           secret

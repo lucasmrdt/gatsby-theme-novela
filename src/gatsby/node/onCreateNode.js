@@ -5,8 +5,17 @@ const slugify = require('slugify');
 
 // Create fields for post slugs and source
 // This will change with schema customization with work
-module.exports = ({ node, actions, getNode, createNodeId }, themeOptions) => {
-  const { createNode, createNodeField, createParentChildLink } = actions;
+module.exports = ({
+  node,
+  actions,
+  getNode,
+  createNodeId
+}, themeOptions) => {
+  const {
+    createNode,
+    createNodeField,
+    createParentChildLink
+  } = actions;
   const contentPath = themeOptions.contentPath || 'content/posts';
   const basePath = themeOptions.basePath || '/';
   const articlePermalinkFormat = themeOptions.articlePermalinkFormat || ':slug';
@@ -48,7 +57,9 @@ module.exports = ({ node, actions, getNode, createNodeId }, themeOptions) => {
   // ///////////////////////////////////////////////////////
 
   if (node.internal.type === `AuthorsYaml`) {
-    const slug = node.slug ? `/${node.slug}` : slugify(node.name, {lower: true});
+    const slug = node.slug ? `/${node.slug}` : slugify(node.name, {
+      lower: true
+    });
 
     const fieldData = {
       ...node,
@@ -73,7 +84,10 @@ module.exports = ({ node, actions, getNode, createNodeId }, themeOptions) => {
       },
     });
 
-    createParentChildLink({ parent: fileNode, child: node });
+    createParentChildLink({
+      parent: fileNode,
+      child: node
+    });
 
     return;
   }
@@ -82,12 +96,15 @@ module.exports = ({ node, actions, getNode, createNodeId }, themeOptions) => {
     const fieldData = {
       author: node.frontmatter.author,
       date: node.frontmatter.date,
+      tag: node.frontmatter.tag,
       hero: node.frontmatter.hero,
       secret: node.frontmatter.secret || false,
       slug: generateSlug(
         basePath,
         generateArticlePermalink(
-          slugify(node.frontmatter.slug || node.frontmatter.title, {lower: true}),
+          slugify(node.frontmatter.slug || node.frontmatter.title, {
+            lower: true
+          }),
           node.frontmatter.date,
         ),
       ),
@@ -113,14 +130,19 @@ module.exports = ({ node, actions, getNode, createNodeId }, themeOptions) => {
       },
     });
 
-    createParentChildLink({ parent: fileNode, child: node });
+    createParentChildLink({
+      parent: fileNode,
+      child: node
+    });
   }
 
   if (node.internal.type === `ContentfulAuthor`) {
     createNodeField({
       node,
       name: `slug`,
-      value: generateSlug(basePath, 'authors', slugify(node.name, {lower: true})),
+      value: generateSlug(basePath, 'authors', slugify(node.name, {
+        lower: true
+      })),
     });
 
     createNodeField({

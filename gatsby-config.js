@@ -75,6 +75,7 @@ module.exports = ({
                   return {
                     ...edge.node,
                     description: edge.node.excerpt,
+                    tag: edge.node.tag,
                     date: edge.node.date,
                     url: site.siteMetadata.siteUrl + edge.node.slug,
                     guid: site.siteMetadata.siteUrl + edge.node.slug,
@@ -91,6 +92,7 @@ module.exports = ({
                   return {
                     ...edge.node,
                     description: edge.node.excerpt,
+                    tag: edge.node.tag,
                     date: edge.node.date,
                     url: site.siteMetadata.siteUrl + '/' + edge.node.slug,
                     guid: site.siteMetadata.siteUrl + '/' + edge.node.slug,
@@ -111,6 +113,7 @@ module.exports = ({
                   return {
                     ...edge.node,
                     description: edge.node.excerpt,
+                    tag: edge.node.tag,
                     date: edge.node.date,
                     url: site.siteMetadata.siteUrl + edge.node.slug,
                     guid: site.siteMetadata.siteUrl + edge.node.slug,
@@ -128,6 +131,7 @@ module.exports = ({
                     node {
                       body
                       excerpt
+                      tag
                       date
                       slug
                       title
@@ -145,6 +149,7 @@ module.exports = ({
                   edges {
                     node {
                       excerpt
+                      tag
                       date
                       slug
                       title
@@ -168,6 +173,7 @@ module.exports = ({
                     node {
                       body
                       excerpt
+                      tag
                       date
                       slug
                       title
@@ -180,6 +186,7 @@ module.exports = ({
                   edges {
                     node {
                       excerpt
+                      tag
                       date
                       slug
                       title
