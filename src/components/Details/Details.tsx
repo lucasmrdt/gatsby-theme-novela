@@ -18,6 +18,7 @@ const Details = styled.details`
   `};
 
   & > summary {
+    outline: none;
     word-break: keep-all;
     font-size: 18px;
     line-height: 1.45;
@@ -25,11 +26,19 @@ const Details = styled.details`
     color: ${(p) => p.theme.colors.primary};
     font-family: ${(p) => p.theme.fonts.serif};
     cursor: pointer;
+    padding: 10px 0;
 
     ${mediaqueries.phablet`
-      padding: 0 20px;
+      padding: 10px 20px;
       font-size: 16px;
     `};
+  }
+
+  &[open] > summary {
+    background: ${(p) => p.theme.colors.background};
+    position: sticky;
+    top: 0;
+    z-index: 1;
   }
 
   & * {
