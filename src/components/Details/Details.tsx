@@ -5,7 +5,7 @@ const Details = styled.details`
   color: ${(p) => p.theme.colors.articleText};
   transition: ${(p) => p.theme.colorModeTransition};
   max-width: 680px;
-  margin: 0 auto 35px;
+  margin: 0 auto 20px;
   width: 100%;
 
   ${mediaqueries.desktop`
@@ -14,7 +14,6 @@ const Details = styled.details`
 
   ${mediaqueries.tablet`
     max-width: 486px;
-    margin: 0 auto 25px;
   `};
 
   & > summary {
