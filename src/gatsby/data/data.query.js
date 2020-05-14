@@ -70,6 +70,7 @@ module.exports.local = {
           featured
           social {
             url
+            name
           }
           slug
           avatar {
